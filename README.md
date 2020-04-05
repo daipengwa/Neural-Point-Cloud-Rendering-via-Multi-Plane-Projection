@@ -1,5 +1,6 @@
 # NeuralPointCloudRendering
-[<div align=center><img src='./images/teaser.png' width=500>]
+<img src='./images/teaser.png' width=500>
+<br>
 **Neural Point Cloud Rendering via Multi-Plane projection**  
 Peng Dai*, [Yinda Zhang*](https://www.zhangyinda.com/), [Zhuwen Li*](https://scholar.google.com/citations?user=gIBLutQAAAAJ&hl=en), [Shuaicheng Liu](http://www.liushuaicheng.org/), [Bing Zeng](https://scholar.google.com/citations?user=s-kUGYQAAAAJ&hl=en).
 <br>In [ArXiv](https://arxiv.org/abs/1912.04645.pdf), 2020.
