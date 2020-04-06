@@ -12,7 +12,7 @@ Our method is divided into two parts, the multi-plane based voxelization (left) 
 ## Results
 <img src='./images/results.png' width=1000>
 <br>
-Some test results on [ScanNet]() and [Matterport 3D]() datasets.
+Some test results on [ScanNet]() and [Matterport 3D](https://www.zhangyinda.com/) datasets.
 
 ## Video
 
