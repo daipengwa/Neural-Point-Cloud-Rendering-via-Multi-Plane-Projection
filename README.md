@@ -18,26 +18,25 @@ Python 3.6
 OpenCV
 
 ## Preprocessing
-Before training, there are several steps required. And pre-processing results are stored in '../pre_processing_results/'.
+Before training, there are several steps required. And pre-processing results are stored in 'pre_processing_results/'.
 
 ### Data downloads
 Download datasets(i.e. ScanNet and Matterport 3D) into corresponding 'data/...' folders or use your own datasets.
 
 ### Point clouds generation
-Generate point clouds files from registrated RGB-D images. We provide 'pre_processing/generate_pointclouds_* .py' for point cloud files generation(point_clouds.ply). 
+Generate point clouds files from registrated RGB-D images. Run 'pre_processing/generate_pointclouds_* .py' for point cloud files generation('point_clouds.ply'). Change file paths accordingly.
 
 ### Point clouds simplification
-Based on generated point cloud files, we provide 'pre_processing/pointclouds_simplification.py' for point cloud simplification, results are saved in 'point_clouds_simplified.ply'.
+Based on generated point cloud files, we provide 'pre_processing/pointclouds_simplification.py' for point cloud simplification, results are saved in 'point_clouds_simplified.ply'. Also change file paths accordingly.
 
 ### Voxelization and Aggregation
-In order to save training time, we voxelize and aggregate point clouds in advance by running 'pre_processing/voxelization_aggregation_* .py'. 
+In order to save training time, we voxelize and aggregate point clouds in advance by running 'pre_processing/voxelization_aggregation_* .py'. Also change file paths accordingly. 
 
 ## Network training
-To train the model, just run 'npcr_ScanNet.py' for ScanNet and 'npcr_Matterport3D.py' for Matterport3D.
+To train the model, just run 'python npcr_ScanNet.py' for ScanNet and 'python npcr_Matterport3D.py' for Matterport3D. Set "is_training=True" and change path accordingly.
 
 ## Pretrained model
-<br>
-If you need the point cloud files and pretrained models, please email us and show licenses of [ScanNet](https://github.com/ScanNet/ScanNet) and [Matterport3D](https://github.com/niessner/Matterport).
+If you need the point cloud files and pretrained models, please email me(daipengwa@gmail.com) and show licenses of [ScanNet](https://github.com/ScanNet/ScanNet) and [Matterport3D](https://github.com/niessner/Matterport).
 
 ## Citation
 If you use our code or method in your work, please cite the following:
