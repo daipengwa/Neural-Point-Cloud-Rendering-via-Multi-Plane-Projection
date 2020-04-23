@@ -12,7 +12,9 @@ Our method is divided into two parts, the multi-plane based voxelization (left) 
 ## Code coming soon!
 ## Environments
 Tensorflow 1.10.0
+<br>
 Python 3.6
+<br>
 OpenCV
 
 ## Preprocessing
