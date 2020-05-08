@@ -32,8 +32,10 @@ Based on generated point cloud files, we provide 'pre_processing/pointclouds_sim
 ### Voxelization and Aggregation
 In order to save training time, we voxelize and aggregate point clouds in advance by running 'pre_processing/voxelization_aggregation_* .py'. Also change file paths accordingly. 
 
-## Network training
+## Network training/testing
 To train the model, just run 'python npcr_ScanNet.py' for ScanNet and 'python npcr_Matterport3D.py' for Matterport3D. Set "is_training=True" and change path accordingly.
+\br
+Set "is_training=False" for testing.
 
 ## Pretrained model
 If you need the point cloud files and pretrained models, please email me(daipengwa@gmail.com) and show licenses of [ScanNet](https://github.com/ScanNet/ScanNet) and [Matterport3D](https://github.com/niessner/Matterport).
