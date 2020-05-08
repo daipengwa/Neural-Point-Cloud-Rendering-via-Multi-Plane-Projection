@@ -34,7 +34,7 @@ In order to save training time, we voxelize and aggregate point clouds in advanc
 
 ## Network training/testing
 To train the model, just run 'python npcr_ScanNet.py' for ScanNet and 'python npcr_Matterport3D.py' for Matterport3D. Set "is_training=True" and change path accordingly.
-\br
+<br>
 Set "is_training=False" for testing.
 
 ## Pretrained model
