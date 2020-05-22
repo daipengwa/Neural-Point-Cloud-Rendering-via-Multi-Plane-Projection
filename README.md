@@ -20,26 +20,26 @@ OpenCV
 Download datasets(i.e. ScanNet and Matterport 3D) into corresponding 'data/...' folders, including RGB_D images, camera parameters.
 
 ## Preprocessing
-Before training, there are several steps required. And pre-processing results will be stored in 'pre_processing_results/xxx'.
+Before training, there are several steps required. And the pre-processing results will be stored in 'pre_processing_results/[Matterport3D or ScanNet]/[scene_name]/'.
 
 ### Point clouds generation
-Generate point clouds files('point_clouds.ply') from registrated RGB-D images by running ```python pre_processing/generate_pointclouds_xxx.py ```. Before that, you need to specific which scene (i.e. 'scene = scene_name') you want to deal with in 'generate_pointclouds_xxx.py'.
+Generate point clouds files('point_clouds.ply') from registrated RGB-D images by running ```python pre_processing/generate_pointclouds_xxx.py ```. Before that, you need to specific which scene is used in 'generate_pointclouds_xxx.py' (e.g. set "scene = 'scene0010_00'" for ScanNet) .
 
 ### Point clouds simplification
-Based on generated point cloud files, we provide ``` python pre_processing/pointclouds_simplification.py``` for point cloud simplification, results will be saved in 'point_clouds_simplified.ply'. Also, you need to specific the 'point_clouds.ply' file from which dataset and scene (i.e. 'scene = dataset/scene_name') in 'pointclouds_simplification.py'.
+Based on generated point cloud files, run ``` python pre_processing/pointclouds_simplification.py``` for point cloud simplification, and simplified point clouds will be saved in 'point_clouds_simplified.ply'. Also, you need to specific the 'point_clouds.ply' file from which dataset and scene in 'pointclouds_simplification.py' (e.g. set "scene = 'ScanNet/scene0010_00'").
 
 ### Voxelization and Aggregation
-In order to save training time, we voxelize and aggregate point clouds in advance by running ```python pre_processing/voxelization_aggregation_xxx.py```. This will pre-compute and save voxelizaion and aggregation information for each camera (saved in 'reproject_results_xx/' and 'weight_xx/' respectively). Also you need to specific the scene (i.e. 'scene = scene_name') in 'voxelization_aggregation_xxx.py'. 
+In order to save training time, we voxelize and aggregate point clouds in advance by running ```python pre_processing/voxelization_aggregation_xxx.py```. This will pre-compute voxelizaion and aggregation information for each camera and save them in 'reproject_results_32/' and 'weight_32/' respectively (default 32 planes). Also, you need to specific the scene in 'voxelization_aggregation_xxx.py' (e.g. set "scene = 'scene0010_00'" for ScanNet) . 
 
 ## Train
 Download ['imagenet-vgg-verydeep-19.mat']() into 'VGG_model/'.
 <br>
 <br>
-To train the model, just run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. You need to set 'is_training=True' and specific the dataset and scene name (i.e. 'dataset = dataset_name', 'scene = scene_name') in 'npcr_xxx.py', and the output_path is 'xxx(dataset_name)_npcr_xxx(scene_name)'.
+To train the model, just run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. You need to set 'is_training=True' and provide the paths of train related files(i.e. RGB images, camera parameters, simplified point cloud file, pre-processed aggregation and voxelizaton information) by specificing the scene name in 'npcr_[ScanNet or Matterport3D].py' (e.g. set "scene = 'scene0010_00'" for ScanNet) , and the trained model (i.e. checkpoint files) and optimized point descriptors (i.e. 'descriptor.mat') will be saved in '[ScanNet or Matterport3D]_npcr_[scene_name]/'.
 <br>
 
 ## Test
-To test the model, you need to set 'is_training=False' and specific dataset and scene name. Then, run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. And the test results will be saved in 'xxx(output_path)/Test_Result/'.
+To test the model, also run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. You need to set 'is_training=False' and provide the paths of test related files (i.e. checkpoint files, optimized point descriptors, camera parameters, simplified point cloud file, pre-processed aggregation and voxelizaton information) by specificing the scene name in 'npcr_[ScanNet or Matterport3D].py' (e.g. set "scene = 'scene0010_00'" for ScanNet). And the test results will be saved in '[ScanNet or Matterport3D]_npcr_[scene_name]/Test_Result/'.
 
 If you need the point cloud files and pretrained models, please email me(daipengwa@gmail.com) and show licenses of [ScanNet](https://github.com/ScanNet/ScanNet) and [Matterport3D](https://github.com/niessner/Matterport).
 
