@@ -34,11 +34,12 @@ In order to save training time, we voxelize and aggregate point clouds in advanc
 ## Train
 Download ['imagenet-vgg-verydeep-19.mat']() into 'VGG_model/'.
 <br>
+<br>
 To train the model, just run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. You need to set 'is_training=True' and specific the dataset and scene name (i.e. 'dataset = dataset_name', 'scene = scene_name') in 'npcr_xxx.py', and the output_path is 'xxx(dataset_name)_npcr_xxx(scene_name)'.
 <br>
 
 ## Test
-To test the model, you need to set 'is_training=False' and specific dataset and scene name. Then, run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. The test results will be saved in 'xxx(output_path)/Test_Result/'.
+To test the model, you need to set 'is_training=False' and specific dataset and scene name. Then, run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. And the test results will be saved in 'xxx(output_path)/Test_Result/'.
 
 If you need the point cloud files and pretrained models, please email me(daipengwa@gmail.com) and show licenses of [ScanNet](https://github.com/ScanNet/ScanNet) and [Matterport3D](https://github.com/niessner/Matterport).
 
