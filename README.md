@@ -23,10 +23,10 @@ Download datasets(i.e. ScanNet and Matterport 3D) into corresponding 'data/...' 
 Before training, there are several steps required. And pre-processing results will be stored in 'pre_processing_results/'.
 
 ### Point clouds generation
-Generate point clouds files('point_clouds.ply') from registrated RGB-D images by running ''' python pre_processing/generate_pointclouds_xxx.py '''. Before that, you need to specific some file paths in 'generate_pointclouds_xxx.py'. where 'scene'
+Generate point clouds files('point_clouds.ply') from registrated RGB-D images by running ```python pre_processing/generate_pointclouds_xxx.py ```. Before that, you need to specific which scene (i.e. 'scene = scene_name') you want to deal with in 'generate_pointclouds_xxx.py'.
 
 ### Point clouds simplification
-Based on generated point cloud files, we provide 'pre_processing/pointclouds_simplification.py' for point cloud simplification, results are saved in 'point_clouds_simplified.ply'. Also change file paths accordingly.
+Based on generated point cloud files, we provide ``` pre_processing/pointclouds_simplification.py``` for point cloud simplification, results will be saved in 'point_clouds_simplified.ply'. 
 
 ### Voxelization and Aggregation
 In order to save training time, we voxelize and aggregate point clouds in advance by running 'pre_processing/voxelization_aggregation_* .py'. Also change file paths accordingly. 
