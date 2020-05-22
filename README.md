@@ -16,14 +16,14 @@ Python 3.6
 <br>
 OpenCV
 
-## Preprocessing
-Before training, there are several steps required. And pre-processing results are stored in 'pre_processing_results/'.
+## Data downloads
+Download datasets(i.e. ScanNet and Matterport 3D) into corresponding 'data/...' folders, including RGB_D images, camera parameters.
 
-### Data downloads
-Download datasets(i.e. ScanNet and Matterport 3D) into corresponding 'data/...' folders or use your own datasets.
+## Preprocessing
+Before training, there are several steps required. And pre-processing results will be stored in 'pre_processing_results/'.
 
 ### Point clouds generation
-Generate point clouds files from registrated RGB-D images. Run 'pre_processing/generate_pointclouds_* .py' for point cloud files generation('point_clouds.ply'). Change file paths accordingly.
+Generate point clouds files('point_clouds.ply') from registrated RGB-D images by running ''' python pre_processing/generate_pointclouds_xxx.py '''. Before that, you need to specific some file paths in 'generate_pointclouds_xxx.py'. where 'scene'
 
 ### Point clouds simplification
 Based on generated point cloud files, we provide 'pre_processing/pointclouds_simplification.py' for point cloud simplification, results are saved in 'point_clouds_simplified.ply'. Also change file paths accordingly.
