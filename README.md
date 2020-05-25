@@ -32,7 +32,7 @@ Based on generated point cloud files, run ``` python pre_processing/pointclouds_
 In order to save training time, we voxelize and aggregate point clouds in advance by running ```python pre_processing/voxelization_aggregation_[ScanNet or Matterport].py```. This will pre-compute voxelizaion and aggregation information for each camera and save them in 'reproject_results_32/' and 'weight_32/' respectively (default 32 planes). Also, you need to specific the scene in 'voxelization_aggregation_[ScanNet or Matterport].py' (e.g. set "scene = 'scene0010_00'" for ScanNet) . 
 
 ## Train
-Download ['imagenet-vgg-verydeep-19.mat'](https://github.com/CQFIO/PhotographicImageSynthesis/blob/master/download_models.py) into 'VGG_model/'.
+Download ['imagenet-vgg-verydeep-19.mat'](https://github.com/CQFIO/PhotographicImageSynthesis/blob/master/download_models.py) into 'VGG_Model/'.
 <br>
 <br>
 To train the model, just run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. You need to set 'is_training=True' and provide the paths of train related files (i.e. RGB images, camera parameters, simplified point cloud file, pre-processed aggregation and voxelizaton information) by specificing the scene name in 'npcr_[ScanNet or Matterport3D].py' (e.g. set "scene = 'scene0010_00'" for ScanNet) , and the trained model (i.e. checkpoint files) and optimized point descriptors (i.e. 'descriptor.mat') will be saved in '[ScanNet or Matterport3D]_npcr_[scene_name]/'.
