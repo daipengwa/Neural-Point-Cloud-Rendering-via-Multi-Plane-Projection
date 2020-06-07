@@ -5,44 +5,24 @@ import scipy.io as io
 from loss import *
 from utils import *
 
-is_training = False
-use_viewdirection = True
-renew_input = True
-constant_initial = True
-use_RGB = True
-random_crop = True
+is_training = False     # if test, set this 'False'
+use_viewdirection = True  # use view direction
+renew_input = True  # optimize input point features.
+constant_initial = True  # use constant value for initialization.
+use_RGB = True  # use RGB information for initialization.
+random_crop = True  # crop image.
 
-d = 32
-h = 512
-w = 640
-top_left_v = 0
-top_left_u = 0
-h_croped = 256
-w_croped = 320
-forward_time = 4
-overlap = 32
+d = 32   # how many planes are used, identity with pre-processing.
+h = 512  # image height, identity with pre-processing.
+w = 640  # image weight, identity with pre-processing.
+top_left_v = 0  # top left position
+top_left_u = 0  # top left position
+h_croped = 256  # crop size height
+w_croped = 320  # crop size weight
+forward_time = 4  # opistorted_camera_parameters/' % (dataset, scene)  # path of camera poses
 
-channels_i = int(8)
-channels_o = 3
-channels_v = 3
-
-gpu_id = 2
-num_epoch = 30
-decrease_epoch = 10
-learning_rate = 0.0001
-learning_rate_1 = 0.01
-
-dataset = 'Matterport3D'
-scene = '17DRP5sb8fy'
-task = '%s_npcr_%s' % (dataset, scene)
-
-dir1 = 'data/%s/%s/undistorted_color_images/' % (dataset, scene)
-dir2 = 'pre_processing_results/%s/%s/reproject_results_%s/' % (dataset, scene, d)
-# dir2 = '../3D_volume_all_points/Matterport_3D/pre_processing_results/reproject_results_%s/' % (d)
-dir3 = 'data/%s/%s/undistorted_camera_parameters/' % (dataset, scene)
-dir4 = 'pre_processing_results/%s/%s/weight_%s/' % (dataset, scene, d)
-# dir4 = '../3D_volume_all_points/Matterport_3D/pre_processing_results/weight_%s/' % (d)
-dir5 = 'pre_processing_results/%s/%s/point_clouds_simplified.ply' % (dataset, scene)
+dir4 = 'pre_processing_results/%s/%s/weight_%s/' % (dataset, scene, d)  # aggregation information path.
+dir5 = 'pre_processing_results/%s/%s/point_clouds_simplified.ply' % (dataset, scene)  # point clouds file path
 
 num_image = len(glob.glob(os.path.join(dir1, '*.jpg')))
 
@@ -288,7 +268,7 @@ else:
     if not os.path.isdir(output_path):
         os.makedirs(output_path)
 
-    for id in range(len(image_names_test)):
+    for id in range(len(camera_names_test)):
 
         st = time.time()
         image_descriptor = np.zeros([1, d, h, w, channels_i])
