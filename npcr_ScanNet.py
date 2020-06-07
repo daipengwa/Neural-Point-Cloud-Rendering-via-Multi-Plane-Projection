@@ -282,7 +282,7 @@ else:
     if not os.path.isdir(output_path):
         os.makedirs(output_path)
 
-    for id in range(len(image_names_test)):
+    for id in range(len(camera_names_test)):
 
         st = time.time()
         image_descriptor = np.zeros([1, d, h, w, channels_i])
