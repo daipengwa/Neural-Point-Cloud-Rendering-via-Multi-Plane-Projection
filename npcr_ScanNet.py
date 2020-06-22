@@ -14,11 +14,11 @@ random_crop = True  # crop image.
 
 d = 32   # how many planes are used, identity with pre-processing.
 h = 480  # image height, identity with pre-processing.
-w = 640  # image weight, identity with pre-processing.
+w = 640  # image width, identity with pre-processing.
 top_left_v = 0  # top left position
 top_left_u = 0  # top left position
 h_croped = 240  # crop size height
-w_croped = 320  # crop size weight
+w_croped = 320  # crop size width
 forward_time = 4  # optimize input point features after cropping 4 times on one image.
 overlap = 32  # size of overlap region of crops.
 
