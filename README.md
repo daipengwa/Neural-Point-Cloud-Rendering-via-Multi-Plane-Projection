@@ -1,4 +1,4 @@
-# NeuralPointCloudRendering
+# Neural Point Cloud Rendering via Multi-Plane Projection
 
 **Neural Point Cloud Rendering via Multi-Plane projection** (CVPR 2020)  
 Peng Dai*, [Yinda Zhang*](https://www.zhangyinda.com/), [Zhuwen Li*](https://scholar.google.com/citations?user=gIBLutQAAAAJ&hl=en), [Shuaicheng Liu](http://www.liushuaicheng.org/), [Bing Zeng](https://scholar.google.com/citations?user=s-kUGYQAAAAJ&hl=en).
