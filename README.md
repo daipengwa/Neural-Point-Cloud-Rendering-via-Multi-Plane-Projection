@@ -32,12 +32,16 @@ Before that, you need to specific which scene is used in 'generate_pointclouds_[
 
 ### Point clouds simplification
 Based on generated point cloud files, point cloud simplification is adopted by running 
+
 ``` python pre_processing/pointclouds_simplification.py``` 
+
 Also, you need to specific the 'point_clouds.ply' file generated from which dataset and scene in 'pointclouds_simplification.py' (e.g. set "scene = 'ScanNet/scene0010_00'"). And simplified point clouds will be saved in 'point_clouds_simplified.ply'. 
 
 ### Voxelization and Aggregation
 In order to save training time, we voxelize and aggregate point clouds in advance by running 
+
 ```python pre_processing/voxelization_aggregation_[ScanNet or Matterport].py```
+
 This will pre-compute voxelizaion and aggregation information for each camera and save them in 'reproject_results_32/' and 'weight_32/' respectively (default 32 planes). Also, you need to specific the scene in 'voxelization_aggregation_[ScanNet or Matterport].py' (e.g. set "scene = 'scene0010_00'" for ScanNet) . 
 
 ## Train
