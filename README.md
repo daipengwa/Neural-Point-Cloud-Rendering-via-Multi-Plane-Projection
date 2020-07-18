@@ -25,7 +25,9 @@ Before training, there are several steps required. And the pre-processed results
 
 ### Point clouds generation
 Generate point clouds files('point_clouds.ply') from registrated RGB-D images by running 
+
 ```python pre_processing/generate_pointclouds_[ScanNet or Matterport].py ```
+
 Before that, you need to specific which scene is used in 'generate_pointclouds_[ScanNet or Matterport].py' (e.g. set "scene = 'scene0010_00'" for ScanNet) .
 
 ### Point clouds simplification
