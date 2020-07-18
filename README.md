@@ -48,13 +48,17 @@ This will pre-compute voxelizaion and aggregation information for each camera an
 Download ['imagenet-vgg-verydeep-19.mat'](https://drive.google.com/file/d/1BAncAnrk2u82t-o8mprMlFWqhege_LgL/view?usp=sharing) into 'VGG_Model/'.
 <br>
 <br>
-To train the model, just run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. You need to set 'is_training=True' and provide the paths of train related files (i.e. RGB images, camera parameters, simplified point cloud file, pre-processed aggregation and voxelizaton information) by specificing the scene name in 'npcr_[ScanNet or Matterport3D].py' (e.g. set "scene = 'scene0010_00'" for ScanNet).
+To train the model, just run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. 
+
+You need to set 'is_training=True' and provide the paths of train related files (i.e. RGB images, camera parameters, simplified point cloud file, pre-processed aggregation and voxelizaton information) by specificing the scene name in 'npcr_[ScanNet or Matterport3D].py' (e.g. set "scene = 'scene0010_00'" for ScanNet).
 
 The trained model (i.e. checkpoint files) and optimized point descriptors (i.e. 'descriptor.mat') will be saved in '[ScanNet or Matterport3D]_npcr_[scene_name]/'.
 <br>
 
 ## Test
-To test the model, also run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. You need to set 'is_training=False' and provide the paths of test related files (i.e. checkpoint files, optimized point descriptors, camera parameters, simplified point cloud file, pre-processed aggregation and voxelizaton information) by specificing the scene name in 'npcr_ [ScanNet or Matterport3D].py' (e.g. set "scene = 'scene0010_00'" for ScanNet). 
+To test the model, also run ```python npcr_ScanNet.py``` for ScanNet and ```python npcr_Matterport3D.py``` for Matterport3D. 
+
+You need to set 'is_training=False' and provide the paths of test related files (i.e. checkpoint files, optimized point descriptors, camera parameters, simplified point cloud file, pre-processed aggregation and voxelizaton information) by specificing the scene name in 'npcr_ [ScanNet or Matterport3D].py' (e.g. set "scene = 'scene0010_00'" for ScanNet). 
 
 The test results will be saved in '[ScanNet or Matterport3D]_npcr_[scene_name]/Test_Result/'.
 
