@@ -68,11 +68,11 @@ If you need the point cloud files and pretrained models, please email me(daipeng
 ## Citation
 If you use our code or method in your work, please cite the following:
 ```
-@InProceedings{Dai_2019_neuralpointcloudrendering,
-author = {Peng, Dai and Yinda, Zhang and Zhuwen, Li and Shuaicheng, Liu and Bing, Zeng},
-title = {Neural Point Cloud Rendering via Multi-plane Projection},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2020}
+@inproceedings{dai2020neural,
+  title={Neural point cloud rendering via multi-plane projection},
+  author={Dai, Peng and Zhang, Yinda and Li, Zhuwen and Liu, Shuaicheng and Zeng, Bing},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={7830--7839},
+  year={2020}
 }
 
